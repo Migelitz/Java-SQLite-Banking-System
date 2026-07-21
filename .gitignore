@@ -1,0 +1,10 @@
+# Ignore VS Code local settings
+.vscode/
+
+# Ignore compiled Java classes
+bin/
+*.class
+
+# Ignore local database test files
+data/*.db
+*.db
