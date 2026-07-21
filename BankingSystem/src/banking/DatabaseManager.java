@@ -1,13 +1,22 @@
 package BankingSystem.src.banking;
 
 import java.sql.*;
+import java.io.File;
 
 public class DatabaseManager {
     // Database connection URL for the SQLite file.
-    private static final String URL = "jdbc:sqlite:BankingSystem/data/banking.db";
+    private static final String DIR_PATH = "BankingSystem/data/";
+    private static final String URL = "jdbc:sqlite:" + DIR_PATH + "banking.db";
 
     // Create a connection to the SQLite database.
     public static Connection connect() throws SQLException {
+
+        // Create data directory if not existing
+        File directory = new File(DIR_PATH);
+        if (!directory.exists()){
+            directory.mkdir();
+        }
+
         return DriverManager.getConnection(URL);
     }
 
@@ -43,10 +52,10 @@ public class DatabaseManager {
             pstmt.setDouble(2, account.getBalance());
 
             pstmt.executeUpdate();
-            System.out.println("\n[DB] Account successfully saved to database!\n");
+            System.out.println("\n[DB] Account successfully saved to database!");
 
         } catch (SQLException e) {
-            System.out.println("\n[DB Error] Could not save account: " + e.getMessage() + "\n");
+            System.out.println("\n[DB Error] Could not save account: " + e.getMessage());
         }
     }
 
