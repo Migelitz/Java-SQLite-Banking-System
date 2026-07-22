@@ -3,7 +3,8 @@
 > A lightweight, console-based banking application built in Java. Features object-oriented design and persistent data storage using SQLite and JDBC, with built-in SQL injection protection.
 
 ## 🎥 Demo
-*(Note: I will be adding a quick video demonstration of the application running here soon!)*
+
+https://github.com/user-attachments/assets/863a6044-1500-4b04-a960-d773e9310070
 
 ---
 
